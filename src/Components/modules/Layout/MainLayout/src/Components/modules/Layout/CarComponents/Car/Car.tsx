@@ -3,6 +3,7 @@ import "./Car.css";
 import axios from "axios";
 import SingleCar from "../../../../../../../../../SingleCar/SingleCar";
 import CarData from "../../../../../../../../../SingleCar/CarData";
+import jwtAxios from "../../../../../../../../../myAxios/jwtAxios";
 function Car(): JSX.Element {
     //endpoint url to transportation ministry
     const myURL = "https://data.gov.il/api/3/action/datastore_search?resource_id=053cea08-09bc-40ec-8f7a-156f0677aff3&q="
@@ -21,6 +22,7 @@ function Car(): JSX.Element {
 
     useEffect(()=>{
         //getCar_v2();
+        sendOurAxios();
     },[]);
 
     //v1  --async await
@@ -39,11 +41,11 @@ function Car(): JSX.Element {
     const getCarData = ()=>{
         axios.get(myURL+carNumber)
         .then (response=>{
-            console.log(response.data.result.records[0]);
+            //console.log(response.data.result.records[0]);
             const carInfo = response.data.result.records[0];
             const recvData = new CarData(carInfo.mispar_rechev,carInfo.kinuy_mishari,carInfo.tozeret_nm,carInfo.tzeva_rechev,carInfo.shnat_yitzur,carInfo.tokef_dt);
             setCarData(recvData);
-            console.log("we have car data");
+            //console.log("we have car data");
         })
     }
 
@@ -56,6 +58,14 @@ function Car(): JSX.Element {
                 //1-permanent 2-temp    
                 setHandi(response.data.result.records.length>0);
             });
+    }
+
+    const sendOurAxios = ()=>{
+        jwtAxios.get(myURL+"1113334")
+        .then ((response)=>{
+            console.log("response from jwtAxios");
+            console.log(response);
+        });
     }
 
 
