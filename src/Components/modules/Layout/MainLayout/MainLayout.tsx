@@ -1,3 +1,5 @@
+import ClassExample from "../../../hooks/ClassExample/ClassExample";
+import FunctionalExample from "../../../hooks/FunctionalExample/FunctionalExample";
 import "./MainLayout.css";
 import Car from "./src/Components/modules/Layout/CarComponents/Car/Car";
 import Footer from "./src/Components/modules/Layout/Footer/Footer";
@@ -10,7 +12,7 @@ function MainLayout(): JSX.Element {
         <div className="MainLayout">
 			<header><Header/></header>
             <aside><Menu/></aside>
-            <main><Car/></main>
+            <main><FunctionalExample/></main>
             <footer><Footer/></footer>
         </div>
     );
