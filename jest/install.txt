@@ -1,0 +1,9 @@
+npm init -y //create our new beloved package.json
+
+npm i --save-dev jest
+
+
+inside pakcage.json
+"scripts": {
+    "test": "jest"
+},
