@@ -3,11 +3,13 @@ import ReactDom from "react-dom/client";
 
 function Component1(){
     const [user,setUser] = useState("Zeev Mindali");
+    const [myState,setState] = useState(false);
 
     return (
         <UserContext.Provider value={user}>
             <h1>{`Hello ${user}!`}</h1>
             {/*<Component2 user={user}/>*/}
+            {setState(!myState)}
         </UserContext.Provider>
     )
 }

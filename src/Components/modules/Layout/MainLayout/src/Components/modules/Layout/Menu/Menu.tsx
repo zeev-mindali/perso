@@ -1,9 +1,13 @@
+import { store } from "../../../../../../../../../redux/store";
 import "./Menu.css";
 
 function Menu(): JSX.Element {
     return (
         <div className="Menu">
-			Main Menu<hr/>
+			Main Menu<br/>
+            {store.getState().authState.userName}
+            {/* store.subscribe */}
+            <hr/>
             locate car<br/>
             locate bike<br/>
             locate truck<br/>
