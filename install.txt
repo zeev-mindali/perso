@@ -1,0 +1,10 @@
+//for testing typescripts
+npm install --save-dev jest @types/jest @babel/preset-typescript
+
+
+//for testing react 
+npm install --save-dev @testing-library/react @testing-library/jest-dom ts-jest
+
+****check that 29 version of jest is installed
+
+zeev 052-404-3142 =>whatsup 
